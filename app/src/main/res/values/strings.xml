@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Moneyplan</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_add_note">add_note</string>
 </resources>
