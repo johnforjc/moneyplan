@@ -27,6 +27,26 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         });
+
+        ImageView lihatPendapatan = findViewById(R.id.imageView3);
+        lihatPendapatan.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(Dashboard.this, LihatPendapatanActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        ImageView lihatPengeluaran = findViewById(R.id.imageView4);
+        lihatPengeluaran.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(Dashboard.this, LihatPengeluaran.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 }

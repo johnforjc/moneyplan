@@ -47,6 +47,8 @@ public class add_note extends AppCompatActivity {
             public void onClick(View v)
             {
                 boolean tipe_catatan;
+                String note="";
+                int jumlah_value=0;
                 int selectedId = option.getCheckedRadioButtonId();
 
                 if(selectedId != -1)
@@ -64,8 +66,25 @@ public class add_note extends AppCompatActivity {
                         tipe_catatan = false;
                     }
 
-                    String note = (String) nama_catatan.getText().toString();
-                    int jumlah_value = Integer.parseInt(jumlah_field.getText().toString());
+                    if(nama_catatan.getText().length()>0){
+                        note = (String) nama_catatan.getText().toString();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Masukkan nama catatan", Toast.LENGTH_LONG).show();
+                        return ;
+                    }
+
+                    if(jumlah_field.getText().length()>0)
+                    {
+                        jumlah_value = Integer.parseInt(jumlah_field.getText().toString());
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Masukkan jumlah catatan", Toast.LENGTH_LONG).show();
+                        return ;
+                    }
+
                     d = Calendar.getInstance().getTime();
                     SimpleDateFormat simple_d = new SimpleDateFormat("dd-MM-yyyy");
                     String formated_simple_d = simple_d.format(d);
