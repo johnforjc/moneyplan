@@ -47,6 +47,16 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         });
+
+        ImageView SettingAlarm = findViewById(R.id.imageView5);
+        SettingAlarm.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(Dashboard.this, SettingAlarm.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 }
