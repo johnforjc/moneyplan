@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/text_nama_catatan"
-        android:layout_width="185dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:gravity="left"
         android:paddingLeft="3dip"
@@ -29,7 +29,7 @@
 
     <TextView
         android:id="@+id/text_jumlah"
-        android:layout_width="80dp"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:paddingLeft="3dip"
         android:gravity="left"
