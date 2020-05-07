@@ -28,5 +28,11 @@ public class MainActivity extends AppCompatActivity {
         });
         dbcenter = new DatabaseHelper(this);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+    }
 }
 

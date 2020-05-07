@@ -118,4 +118,10 @@ public class add_note extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+    }
 }
