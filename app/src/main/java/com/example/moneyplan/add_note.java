@@ -86,7 +86,7 @@ public class add_note extends AppCompatActivity {
                     }
 
                     d = Calendar.getInstance().getTime();
-                    SimpleDateFormat simple_d = new SimpleDateFormat("dd-MM-yyyy");
+                    SimpleDateFormat simple_d = new SimpleDateFormat("yyyy-MM-dd");
                     String formated_simple_d = simple_d.format(d);
 
                     String mySqlQuery = "insert into money_note(Nama_catatan, Tanggal, income, jumlah) VALUES('" + note + "', '" + formated_simple_d + "', '" + tipe_catatan +  "', '" + jumlah_value + "');";

@@ -24,7 +24,7 @@ public class LihatPengeluaran extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.pengeluaran_lv);
         dbHelper = new DatabaseHelper(getApplicationContext());
         sqLiteDatabase = dbHelper.getReadableDatabase();
-        cursor =sqLiteDatabase.rawQuery("SELECT * FROM money_note WHERE income='false'", null);
+        cursor =sqLiteDatabase.rawQuery("SELECT * FROM money_note WHERE income='false' AND  Tanggal BETWEEN '01-04-2020' AND '30-04-2020'  ", null);
         listAdapter = new MyObject_ListAdapter(getApplicationContext(), R.layout.rowdata);
         listView.setAdapter(listAdapter);
 
