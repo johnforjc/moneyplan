@@ -2,6 +2,7 @@ package com.example.moneyplan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -31,8 +32,6 @@ public class LihatPendapatanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int seleted = mySpinner.getSelectedItemPosition();
                 String urutan = "";
-
-
 
                 if(seleted == 0) urutan="01";
                 else if(seleted == 1) urutan="02";
@@ -79,6 +78,8 @@ public class LihatPendapatanActivity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        super.onBackPressed();
+        Intent intent = new Intent(LihatPendapatanActivity.this, Dashboard.class);
+        startActivity(intent);
+        finish();
     }
 }
