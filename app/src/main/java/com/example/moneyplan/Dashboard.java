@@ -57,6 +57,16 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         });
+
+        ImageView pengingatTagihan = findViewById(R.id.imageView10);
+        pengingatTagihan.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(Dashboard.this, tagihan.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 }

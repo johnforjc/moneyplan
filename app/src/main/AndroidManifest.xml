@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingAlarm"></activity>
+        <activity
+            android:name=".tagihan"
+            android:label="@string/title_activity_tagihan"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SettingAlarm" />
         <activity android:name=".LihatPengeluaran" />
         <activity android:name=".LihatPendapatanActivity" />
         <activity
@@ -27,8 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <receiver android:name=".AlertReciever"/>
+
+        <receiver android:name=".AlertReciever" />
     </application>
 
 </manifest>
