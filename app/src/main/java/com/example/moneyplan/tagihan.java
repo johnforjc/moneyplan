@@ -145,9 +145,9 @@ public class tagihan extends AppCompatActivity implements DatePickerDialog.OnDat
 
     private void startAlarm(int reqCode) {
         AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, alertTagihan.class);
+        Intent intent = new Intent(this, AlertReciever.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, reqCode, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 2, intent, 0);
 
         if(c.before(Calendar.getInstance()))
         {
@@ -167,4 +167,11 @@ public class tagihan extends AppCompatActivity implements DatePickerDialog.OnDat
         waktu.setText(alarmSetting);
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(tagihan.this, Dashboard.class);
+        startActivity(intent);
+        finish();
+    }
 }

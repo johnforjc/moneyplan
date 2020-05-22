@@ -31,7 +31,7 @@ public class NotificationHelper extends ContextWrapper {
             channel1.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
             getManager().createNotificationChannel(channel1);
 
-            NotificationChannel channel2 = new NotificationChannel(channel2Id, channel2Name, NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel2 = new NotificationChannel(channel2Id, channel2Name, NotificationManager.IMPORTANCE_LOW);
             channel2.enableLights(true);
             channel2.enableVibration(true);
             channel2.setLightColor(R.color.colorPrimary);
@@ -61,7 +61,7 @@ public class NotificationHelper extends ContextWrapper {
 
     public NotificationCompat.Builder getChannel2Notification()
     {
-        return new NotificationCompat.Builder(getApplicationContext(), channel1Id)
+        return new NotificationCompat.Builder(getApplicationContext(), channel2Id)
                 .setContentTitle("Moneyplan")
                 .setContentText("Hai, jangan lupa membayar tagihan anda")
                 .setSmallIcon(R.drawable.ic_notifications);
