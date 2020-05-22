@@ -25,6 +25,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Tanggal date null," +
                 "income boolean null," +
                 "jumlah int null)";
+
+        String sql2= "create table tagihan(" +
+                "id_tagihan integer primary key autoincrement," +
+                "nama_tagihan text null, " +
+                "tanggal date null)";
+        Log.d("Data", "onCreate"+ sql2);
+        db.execSQL(sql2);
         Log.d("Data", "onCreate"+ sql);
         db.execSQL(sql);
     }
