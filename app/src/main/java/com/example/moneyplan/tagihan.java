@@ -41,11 +41,14 @@ public class tagihan extends AppCompatActivity implements DatePickerDialog.OnDat
     EditText namaTagihan;
     Calendar c;
     Cursor cursor;
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tagihan);
+
+        id = 1000;
 
         dbHelper = new DatabaseHelper(this);
 
@@ -102,15 +105,10 @@ public class tagihan extends AppCompatActivity implements DatePickerDialog.OnDat
                     }
                     Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
 
-                    db = dbHelper.getReadableDatabase();
-                    cursor = db.rawQuery("SELECT id_tagihan FROM tagihan WHERE nama_tanggihan = '" + stagihan + "' AND tanggal = '" + formated_simple_d + "'", null);
+//                    db = dbHelper.getReadableDatabase();
+//                    cursor = db.rawQuery("SELECT id_tagihan FROM tagihan WHERE nama_tanggihan = '" + stagihan + "' AND tanggal = '" + formated_simple_d + "'", null);
 
-                    int id=0;
-                    if(cursor.moveToFirst())
-                    {
-                        id = Integer.parseInt(cursor.getString(0));
-                        id+=100;
-                    }
+                    id += 1;
 
                     startAlarm(id);
 
@@ -147,7 +145,7 @@ public class tagihan extends AppCompatActivity implements DatePickerDialog.OnDat
 
     private void startAlarm(int reqCode) {
         AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReciever.class);
+        Intent intent = new Intent(this, alertTagihan.class);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, reqCode, intent, 0);
 
